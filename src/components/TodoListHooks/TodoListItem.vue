@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import { defineProps } from 'vue'
-import { ITodoListItem } from './TodoList.vue'
 import { twMerge } from 'tailwind-merge'
+import { ITodoListItem } from './hooks/useTodoList.ts'
 
-const { todoListItem, onDelete } = defineProps<{
+const { todoListItem, removeOne } = defineProps<{
   todoListItem: ITodoListItem
-  onDelete: (id: number) => void
+  removeOne: (id: number) => void
 }>()
 </script>
 
@@ -13,7 +13,7 @@ const { todoListItem, onDelete } = defineProps<{
   <div :class="twMerge('bg-gray-100 space-x-2 p-2 py-1')">
     <input class="" type="checkbox" v-model="todoListItem.done" />
     <input class="bg-transparent" type="text" v-model="todoListItem.title" />
-    <button @click="onDelete(todoListItem.id)">x</button>
+    <button @click="removeOne(todoListItem.id)">x</button>
   </div>
 </template>
 

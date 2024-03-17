@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import TodoList from './components/TodoList/TodoList.vue'
+import TodoListHooks from './components/TodoListHooks/TodoListHooks.vue'
 </script>
 
 <template>
-  <TodoList></TodoList>
+  <TodoListHooks></TodoListHooks>
 </template>
 
 <style scoped></style>
