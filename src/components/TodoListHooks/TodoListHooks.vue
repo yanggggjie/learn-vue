@@ -9,7 +9,7 @@ const { todoList, removeOne, addNewOne } = useTodoList()
   <div :class="twMerge('w-96 space-y-2 m-4')">
     <h1 :class="twMerge('font-bold text-3xl')">Todos</h1>
     <div v-for="todo in todoList" :key="todo.id">
-      <TodoListItem :todoListItem="todo" :removeOne="removeOne" />
+      <todo-list-item :todo-list-item="todo" :removeOne="removeOne" />
     </div>
     <button
       @click="addNewOne"
